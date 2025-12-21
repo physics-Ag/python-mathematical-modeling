@@ -28,3 +28,15 @@ python6:
 python7:
 # 14、在Python中使用缩进表示代码块
 # 15、判断闰年的代码(a:int中的int只是类型提示，不一定是a真正的类型)
+
+python8:
+# 16、python生成随机数
+# 17、while循环
+
+python9:
+# 18、for循环及print函数不换行写法
+# 19、range的步长
+
+python10:
+# 20、pass空语句
+# 21、continue和break
