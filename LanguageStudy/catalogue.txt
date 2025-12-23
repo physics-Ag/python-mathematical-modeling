@@ -46,3 +46,9 @@ python11:
 # 23、python选择性接收返回值
 
 python12:
+# 24、python中的变量作用域
+# 25、python的函数可以设置参数默认值
+
+python13:
+# 26、关键字参数
+# 27、len函数求字符串长度
