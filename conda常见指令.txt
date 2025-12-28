@@ -1,0 +1,35 @@
+1、换源(这里换为清华源)
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud//pytorch/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+conda config --set show_channel_urls yes
+
+2、移除源
+conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud//pytorch/
+conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
+
+3、查看当前环境信息
+conda info
+
+4、查看已经创建的虚拟环境
+conda info -e
+
+5、切换虚拟环境
+conda activate xx
+
+6、切换到了64位和32位环境
+set CONDA_FORCE_32BIT=1 # 切换到32位
+set CONDA_FORCE_32BIT=0 # 切换到64位
+
+7、创建虚拟环境
+conda create -n xxx python=xx.xx
+
+8、移除虚拟环境
+conda remove -n env_name --all
+
+9、下载包
+conda install package1 package2 package3
+conda remove package1 package2 package3
