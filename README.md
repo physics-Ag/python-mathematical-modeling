@@ -7,13 +7,23 @@
 #### 安装教程
 
 1.  安装anaconda(直达链接：https://www.anaconda.com/download)
-2.  换源
-3.  安装代码编辑器(vscode、pycharm)
-4.  在anaconda安装你所需要的python解释器版本
-5.  安装所需的用于科学计算、数据分析、机器学习的包
+
+2.  安装vscode(直达链接：https://code.visualstudio.com/)
+
+3.  vscode配置conda终端
+可以参考文章：https://blog.csdn.net/qq_64606903/article/details/138170807
+
+4.  使用conda终端创建所需的环境
+可以参考本仓库的conda指令
+
+5.  在你创建的conda环境下安装Jupyter
+可以参考文章：https://zhuanlan.zhihu.com/p/111536267
+
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  本仓库主要使用numpy pandas matplotlib这三个第三方库进行数学建模
+
+2.  本仓库的开发工具主要是vscode、anaconda、Jupyter
+
+3.  本仓库所需的数学基础：高等数学、概率论、线性代数
