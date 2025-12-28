@@ -27,3 +27,9 @@
 2.  本仓库的开发工具主要是vscode、anaconda、Jupyter
 
 3.  本仓库所需的数学基础：高等数学、概率论、线性代数
+
+4.  algorithm主要是数学建模的常见算法 - 结合原理和代码
+
+5.  LanguageStudy主要聚焦于python的语法学习(建议在有C++或C或Java或go语言的前提下再来看)
+
+6.  NumPyStudy主要聚焦于NumPy第三方库的学习
