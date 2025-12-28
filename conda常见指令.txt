@@ -31,5 +31,14 @@ conda create -n xxx python=xx.xx
 conda remove -n env_name --all
 
 9、下载包
-conda install package1 package2 package3
+conda install -c <渠道名称> <包名>
+常见的包：
+defaults       # 官方渠道
+anaconda       # Anaconda公司维护
+conda-forge    # 社区维护（最常用）
+bioconda       # 生物信息学
+pytorch        # PyTorch官方
+nvidia         # NVIDIA官方
+
+10、移除包
 conda remove package1 package2 package3
