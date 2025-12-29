@@ -33,3 +33,49 @@
 5.  LanguageStudy主要聚焦于python的语法学习(建议在有C++或C或Java或go语言的前提下再来看)
 
 6.  NumPyStudy主要聚焦于NumPy第三方库的学习
+
+
+
+# python mathematical modeling
+
+#### Introduction
+Combine Python learning with mathematical modeling
+
+
+#### Installation Tutorial
+
+1. Install Anaconda (Direct link: https://www.anaconda.com/download)
+
+2. Install VSCode (Direct link: https://code.visualstudio.com/)
+
+3. Configure Conda terminal in VSCode
+You can refer to the article:
+https://blog.csdn.net/qq_64606903/article/details/138170807
+
+4. Use the Conda terminal to create the required environment
+You can refer to the Conda commands in this repository
+
+5. Install Jupyter in the Conda environment you created
+You can refer to the article:
+https://zhuanlan.zhihu.com/p/111536267
+
+
+#### Usage Instructions
+
+1. This repository mainly uses three third-party libraries for mathematical modeling:
+numpy, pandas, and matplotlib
+
+2. The main development tools used in this repository are:
+VSCode, Anaconda, and Jupyter
+
+3. Required mathematical background:
+Advanced Mathematics, Probability Theory, Linear Algebra
+
+4. The "algorithm" section mainly includes common mathematical modeling algorithms,
+combining theory and code
+
+5. The "LanguageStudy" section mainly focuses on Python syntax learning
+(It is recommended to read this section if you already know C++, C, Java, or Go)
+
+6. The "NumPyStudy" section mainly focuses on learning the NumPy third-party library
+
