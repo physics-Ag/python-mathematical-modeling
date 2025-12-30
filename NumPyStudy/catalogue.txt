@@ -1,0 +1,6 @@
+NumPy1:
+# 1、自定义创建矩阵
+# 2、数组的shape
+# 3、数组的dtype
+
+NumPy2:
