@@ -1,0 +1,44 @@
+name: Sync from Gitee
+
+on:
+  schedule:
+    # 北京时间每天早上12点同步
+    - cron: '0 12 * * *'
+  workflow_dispatch:  # 支持手动触发
+    inputs:
+      reason:
+        description: '手动同步原因'
+        required: false
+        default: '手动触发同步'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add Gitee Remote
+        run: |
+          git remote add gitee https://gitee.com/physics_Ag/python-mathematical-modeling.git
+          git config user.name "GitHub Actions Bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch and Merge from Gitee
+        run: |
+          git fetch gitee
+          # 尝试合并，如果有冲突则采用Gitee的版本
+          git merge --no-commit --no-ff gitee/master || true
+          # 如果有冲突文件，使用gitee的版本
+          git diff --name-only --diff-filter=U | while read file; do
+            git checkout --theirs "$file"
+            git add "$file"
+          done || true
+          # 提交更改
+          git commit -m "🔄 Sync from Gitee $(date +'%Y-%m-%d %H:%M:%S')" || echo "没有需要同步的更改"
+
+      - name: Push to GitHub
+        run: git push origin master
