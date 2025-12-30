@@ -2,18 +2,19 @@ name: Sync from Gitee
 
 on:
   schedule:
-    # 北京时间每天早上12点同步
-    - cron: '0 12 * * *'
-  workflow_dispatch:  # 支持手动触发
+    - cron: '0 4 * * *'  # UTC 4点 = 北京时间12点
+  workflow_dispatch:
     inputs:
       reason:
         description: '手动同步原因'
         required: false
-        default: '手动触发同步'
 
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 关键！给工作流写入权限
+    
     steps:
       - name: Checkout GitHub Repo
         uses: actions/checkout@v3
@@ -27,18 +28,31 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Fetch and Merge from Gitee
+      - name: Fetch from Gitee
+        run: git fetch gitee
+
+      - name: Merge Changes
         run: |
-          git fetch gitee
-          # 尝试合并，如果有冲突则采用Gitee的版本
+          # 检查是否有更新
+          if git diff --quiet master gitee/master; then
+            echo "没有需要同步的更改"
+            exit 0
+          fi
+          
+          # 尝试合并
           git merge --no-commit --no-ff gitee/master || true
-          # 如果有冲突文件，使用gitee的版本
-          git diff --name-only --diff-filter=U | while read file; do
-            git checkout --theirs "$file"
-            git add "$file"
-          done || true
+          
+          # 处理冲突
+          if git status --porcelain | grep -q "^UU"; then
+            echo "检测到冲突，采用Gitee版本"
+            git diff --name-only --diff-filter=U | while read file; do
+              git checkout --theirs "$file"
+              git add "$file"
+            done
+          fi
+          
           # 提交更改
-          git commit -m "🔄 Sync from Gitee $(date +'%Y-%m-%d %H:%M:%S')" || echo "没有需要同步的更改"
+          git commit -m "🔄 Sync from Gitee $(date +'%Y-%m-%d %H:%M:%S')" || echo "无需提交"
 
       - name: Push to GitHub
         run: git push origin master
