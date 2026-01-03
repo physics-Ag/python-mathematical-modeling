@@ -8,3 +8,7 @@ NumPy2:
 
 NumPy3:
 # 5、np.max和max的区别
+# 6、np.max函数和np.argmax函数
+
+NumPy4:
+# 7、np.sum函数、np.prod函数、np.power函数
