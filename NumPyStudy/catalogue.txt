@@ -12,3 +12,10 @@ NumPy3:
 
 NumPy4:
 # 7、np.sum函数、np.prod函数、np.power函数
+
+NumPy5:
+# 8、数组的加减乘除
+# 9、数组的加法和列表的加法的区别
+
+NumPy6:
+# 10、数组的广播
