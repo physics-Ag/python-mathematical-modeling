@@ -16,5 +16,5 @@ print(type(np.max(B)))
 A = np.array([[1, 2, 3, 4], [2, 3, 4, 5]])
 print(np.max(A))            # 返回最大值
 print(np.argmax(A))         # 返回最大元素对应的索引值，多维数组会被展开，下标从0开始
-print(np.argmax(A, axis = 0))         # 返回每一行的最大索引值，多维数组会被展开，下标从0开始
-print(np.argmax(A, axis = 1))         # 返回每一列的最大索引值，多维数组会被展开，下标从0开始
+print(np.argmax(A, axis = 0))         # 返回每一列的最大索引值，多维数组会被展开，下标从0开始
+print(np.argmax(A, axis = 1))         # 返回每一行的最大索引值，多维数组会被展开，下标从0开始
