@@ -111,3 +111,7 @@ python20:
 
 python21:
 # 43、int()和eval()的区别
+# 44、字符串的分割函数split()
+
+python22:
+# 45、map函数
