@@ -2,6 +2,7 @@
 for i in range(1, 10):      # i是循环变量，range(1, 10)是可迭代对象，range是左闭右开区间
     print(i, end = " ")
 print()
+# 如果是range(num)，表示从0开始，到num-1结束的一个左闭右开区间
     
 # 19、range的步长
 j = input("请输入步长:")
