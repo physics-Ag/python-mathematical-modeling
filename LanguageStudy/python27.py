@@ -1,16 +1,13 @@
-# print("" + "="*40)
-# print("-" * 40)
+# 55、字符串乘法
+b = "666 \n" * 10
+print(b)
 
-
-# print(f"{'Scenario':<20} | {'Pred (h)':<10} | {'Real (h)':<10} | {'Error (%)':<10} | {'Status'}")
-# # 左对齐
-# print(f"{'Text':<10}")  # 'Text      '
-
-# # 右对齐
-# print(f"{'Text':>10}")  # '      Text'
-
-# # 居中对齐
-# print(f"{'Text':^10}")  # '   Text   '
-
-# # 带填充字符
-# print(f"{'Text':*^10}")  # '***Text***'
+# 56、print的格式化对齐打印(f"{}")
+# 左对齐
+print(f"{'Text':<10}")  # 'Text      ' 类似C语言的printf("%-10s", "Text");
+# 右对齐
+print(f"{'Text':>10}")  # '      Text' 类似C语言的printf("%10s", "Text");
+# 居中对齐
+print(f"{'Text':^10}")  # '   Text   '
+# 带填充字符
+print(f"{'Text':*^10}")  # '***Text***'
