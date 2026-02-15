@@ -40,5 +40,11 @@ bioconda       # 生物信息学
 pytorch        # PyTorch官方
 nvidia         # NVIDIA官方
 
-10、移除包
+10、更新conda(不仅对base生效，还对其它conda环境生效)
+conda update -n base -c <渠道名称> conda
+
+11、更新conda环境的包
+conda updata -n <对应环境> -c <渠道名称> <包名字>
+
+12、移除包
 conda remove package1 package2 package3

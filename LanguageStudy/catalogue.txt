@@ -115,3 +115,20 @@ python21:
 
 python22:
 # 45、map函数
+# 46、列表推导式
+
+python23:
+# 47、python文件打开与关闭
+
+python24:
+# 48、python文件的读和写
+# 49、文件上下文管理器
+
+python25:
+# 50、**解包字典
+# 51、python程序退出
+
+python26:
+# 52、字符串方法：startswith()和endswith()判断字符串首尾
+# 53、内置函数：all()和any()判断元素的真假
+# 54、成员运算符：in和not in判断元素是否在序列中
