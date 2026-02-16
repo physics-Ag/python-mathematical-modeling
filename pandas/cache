@@ -1,0 +1,7 @@
+# # pf = pd.read_csv("锂电池数据集：变量字典.csv")
+# # pf.columns = pf.columns.str.strip().str.lower()     # str表示调用Index里面的str属性, str属性里面有strip()和lower()方法，返回的是Index对象，与原生字符串不同
+# # print(pf.columns)
+# # print(pf.head())    # 显示前5行数据
+
+# # print(type(pf["variable"]))         # pandas.core.series.Series
+# # print(type(pf["variable"].values))  # numpy.ndarray
