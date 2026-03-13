@@ -48,3 +48,10 @@ conda updata -n <对应环境> -c <渠道名称> <包名字>
 
 12、移除包
 conda remove package1 package2 package3
+
+13、从requirements.txt文件下载和卸载对应依赖
+conda install --file requirements.txt(优先)  -- conda对应下载，文件需要conda的特定格式
+conda remove -file requirements.txt          -- conda对应卸载，文件需要conda的特定格式
+or
+pip install -r requirements.txt                      -- pip对应下载，文件需要pip的特定格式
+pip uninstall -r requirements.txt                  -- pip对应卸载，文件需要pip的特定格式
