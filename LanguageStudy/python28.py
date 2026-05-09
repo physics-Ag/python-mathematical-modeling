@@ -19,3 +19,23 @@ func3 = decorate(func2)
 
 func1(10)  # 输出: hello world 10
 func3(10)  # 输出: hello world 10
+
+# 58、python类的self参数和函数调用
+class Dog:
+    def __init__(self):
+        print("__init__")
+
+    def fun1():
+        print("func1()")
+    def fun2(self):
+        print("func2()")
+
+# 1、对于Dog(), 首先会创建Dog实例, 然后通过实例调用__init__, 再返回实例, 所以__init__(self)里的self必须写!
+dog1 = Dog()
+
+Dog.fun1()
+# Dog.fun2()    # 这是不行的!因为self参数没被接收
+# dog1.fun1()   # 这是不行的!因为会转化为Dog.fun1(dog1), 但是fun1函数不接受dog1参数
+dog1.fun2()
+
+# 59、python没有函数重载
