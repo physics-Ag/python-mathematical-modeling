@@ -146,3 +146,6 @@ python29:
 # 60、yield
 # 61、python协程
 # 62、tying包
+
+python30:
+# 63、python的Field、TypeDict、BaseModel、Annotated深度理解
