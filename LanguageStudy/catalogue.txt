@@ -149,3 +149,4 @@ python29:
 
 python30:
 # 63、python的Field、TypeDict、BaseModel、Annotated深度理解
+# 64、isinstance函数判断类型
