@@ -9,3 +9,10 @@ from pydantic import Field, BaseModel
 # 下面两种写法是等价的
 age: Annotated[int, Field(..., description="年龄")]
 age: Annotated[int, ..., "年龄"]
+
+# 64、isinstance判断类型
+a = {}
+if isinstance(a, dict):
+    print("a是字典类型")
+else:
+    print("a不是字典类型")
