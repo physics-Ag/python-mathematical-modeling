@@ -66,7 +66,29 @@ async def main():
 # 创建事件循环 + 任务main
 asyncio.run(main())
 
-# 62、tying包
+# 62、tying与typing_extensions包
 # 本质就是对Python类型进行扩展的包
-# Iterator[str]表示返回一个可迭代对象, 迭代的内容是str
-# Iterator[List[str]]表示返回一个可迭代对象, 迭代的内容是List[str]
+# 在typing中：
+# Iterator[str]表示这是一个可迭代对象, 迭代的内容是str
+# Iterator[List[str]]表示这是一个可迭代对象, 迭代的内容是List[str]
+# Callable[[int], str]表示这是一个接受int类型的参数并返回一个str类型的函数
+# Union[int, float] = None表示这是一个默认为None, 要么为str要么为float的值
+# Optional[int] = None是Union[int] = None的特殊写法, !!注意Optional[int]里面只能放一个类型!!
+# Literal[1, "123"]表示这是一个要么为1要么为"123"的值, 注意这个Literal[1, "123"]整体也算一个类型, 可以放在Union里面去
+# any表示这是一个任意类型的值
+# TypeDict是用于给字典类型添加类型注释的, 只需让类继承TypeDict即可(见下面的例1)
+# 在typing_extensions中
+# age: Annotated[int, ..., "年龄"]表示age是int类型, 必须有值, 这个参数是表示年龄
+
+# 例1:
+from typing import TypedDict
+class User(TypedDict):
+    name: str
+    age: int
+    email: str
+user: User = { "name": "张三", "age": 25, "email": "zhangsan@example.com" }
+
+# 在python中, 类型是动态的, 所以需要类型检查器去检查类型, 而typing库、typing_extensions库、基本类型库都是用于给类型检查器去检查类型用的!而非运行python代码用的
+# 类型检查器介绍:
+# mypy是用python编写的一个类型检查器, 可以使用pip install mypy安装
+# 可以使用(mypy python代码)检查一段python代码的类型是否符合要求
