@@ -1,14 +1,42 @@
-from typing import Optional
-from pydantic import Field
+from typing import List
+from pydantic import BaseModel
 
-# 65、python说明类成员的属性的方法
-# 注: (Optional[str]) 等价于 (str | none)
-class test:
-    # 下面的self.name无法说明, 只能强制定义
-    # 注: Field这种等号只适合于这种场合
-    name: Optional[str] = Field(default=None, description="这个人的名字")
-    def __init__(self):
-        self.name = "123"
+# 65、Python类的默认值是被共享的
+class dog:
+    a: int = 10
+    b: List[int] = []
+
+dog1 = dog()
+dog2 = dog()
+print(f"{dog1.a} + {dog1.b}")
+print(f"{dog2.a} + {dog2.b}")
+dog1.b.append(1)
+dog1.b.append(1)
+dog1.b.append(1)
+dog1.a = 10
+print(f"{dog1.a} + {dog1.b}")
+print(f"{dog2.a} + {dog2.b}")
+dog3 = dog()
+print(f"{dog3.a} + {dog3.b}")
+# 解决方案: 
+# (1)、继承BaseModel, 想进一步的话, 可以使用Field进行定制
+class dog(BaseModel):
+    a: int = 10
+    b: List[int] = []
+
+dog1 = dog()
+dog2 = dog()
+print(f"{dog1.a} + {dog1.b}")
+print(f"{dog2.a} + {dog2.b}")
+dog1.b.append(1)
+dog1.b.append(1)
+dog1.b.append(1)
+dog1.a = 10
+print(f"{dog1.a} + {dog1.b}")
+print(f"{dog2.a} + {dog2.b}")
+dog3 = dog()
+print(f"{dog3.a} + {dog3.b}")
+
 
 # 66、set数据类型(集合类型)
 # set类型的定义方法:

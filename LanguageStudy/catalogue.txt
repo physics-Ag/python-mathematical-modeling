@@ -145,12 +145,15 @@ python28:
 python29:
 # 60、yield
 # 61、python协程
-# 62、tying包
+# 62、tying与typing_extensions包
 
 python30:
-# 63、python的Field、TypeDict、BaseModel、Annotated深度理解
+# 63、pydantic库深度理解
 # 64、isinstance函数判断类型
 
 python31:
-# 65、python说明类成员的属性的方法
+# 65、Python类的默认值是被共享的
 # 66、set数据类型(集合类型)
+
+python32:
+# 67、Field和Annotated的区别
