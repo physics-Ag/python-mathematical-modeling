@@ -76,7 +76,7 @@ asyncio.run(main())
 # Optional[int] = None是Union[int] = None的特殊写法, !!注意Optional[int]里面只能放一个类型!!
 # Literal[1, "123"]表示这是一个要么为1要么为"123"的值, 注意这个Literal[1, "123"]整体也算一个类型, 可以放在Union里面去
 # any表示这是一个任意类型的值
-# TypeDict是用于给字典类型添加类型注释的, 只需让类继承TypeDict即可(见下面的例1)
+# TypeDict是用于给字典类型添加类型注释的, 只需让类继承TypeDict即可(见下面的例1), 且注意此时此刻它代表字典不代表类!
 # 在typing_extensions中
 # age: Annotated[int, ..., "年龄"]表示age是int类型, 必须有值, 这个参数是表示年龄
 
