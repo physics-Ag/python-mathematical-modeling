@@ -10,3 +10,24 @@ from pydantic import Field
 age: Annotated[int, Field(..., description="年龄")]                 # 表示类型是int, 必填数, 描述为年龄
 age: Annotated[int, ..., "年龄"]                                    # 元数据有... 和 年龄
 name: Union[str] = Field(default=None, description="这个人的名字")   # 在继承于Basemodel的类里面才有意义
+
+# 68、字符串方法: join()
+# 格式: 分隔符.join(可迭代对象)
+content = "\n".join(["A", "B", "C"])
+print(content)
+
+# 69、上下文管理器的底层原理
+# 上下文管理器的本质就是对try...catch的封装
+# 对于:
+with open("data.txt") as f:
+    data = f.read()
+# 在底层为:
+manager = open("data.txt")
+f = manager.__enter__()
+try:
+    data = f.read()
+finally:
+    manager.__exit__(None, None, None)
+# 所以: as后面的f表示__enter__函数的返回值, 当退出with作用域或者出现异常就会执行__exit__函数
+#      其中, 当__exit__的返回值为False或者None时, 异常会继续抛出; 当__exit__的返回值为True时, 异常将不再抛出
+#      说白了, __enter__相当于构造函数, __exit__相当于析构函数, 只不过功能上更具体罢了
